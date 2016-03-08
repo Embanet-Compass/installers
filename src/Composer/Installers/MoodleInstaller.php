@@ -70,11 +70,12 @@ class MoodleInstaller extends BaseInstaller
         $extra = $package->getExtra();
         $parent_extra = $this->composer->getPackage()->getExtra();
 
-        if( is_array($parent_extra['moodle']) && array_key_exists( "folders", $parent_extra['moodle'] ) )
+        if( array_key_exists('moodle', $parent_extra) && array_key_exists( "folders", $parent_extra['moodle'] ) )
         {
             if($parent_extra['moodle']['folders']['webroot']['name']) $webroot_folder_name = $parent_extra['moodle']['folders']['webroot']['name'];
-        } else {
             $webroot_folder_name = 'moodle';
+        } else {
+            $webroot_folder_name = '.';
         }
 
         $prettyName = $this->package->getPrettyName();
@@ -108,7 +109,7 @@ class MoodleInstaller extends BaseInstaller
             throw new \InvalidArgumentException(sprintf('Package type "%s" is not supported', $type));
         }
 
-        if($type == 'core') return $webroot_folder_name; 
-        else return $this->templatePath($locations[$packageType], $availableVars);
+        if($type == 'moodle-core') return $webroot_folder_name;
+        else return $this->templatePath($webroot_folder_name.'/'.$locations[$packageType], $availableVars);
     }
 }
