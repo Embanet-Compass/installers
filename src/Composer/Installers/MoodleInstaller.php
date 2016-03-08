@@ -6,6 +6,7 @@ use Composer\Package\PackageInterface;
 class MoodleInstaller extends BaseInstaller
 {
     protected $locations = array(
+        'core'               => '{$name}/',
         'mod'                => 'mod/{$name}/',
         'admin_report'       => 'admin/report/{$name}/',
         'atto'               => 'lib/editor/atto/plugins/{$name}/',
