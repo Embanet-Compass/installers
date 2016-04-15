@@ -72,7 +72,9 @@ class MoodleInstaller extends BaseInstaller
 
         if( array_key_exists('moodle', $parent_extra) && array_key_exists( "folders", $parent_extra['moodle'] ) )
         {
-            if($parent_extra['moodle']['folders']['webroot']['name']) $webroot_folder_name = $parent_extra['moodle']['folders']['webroot']['name'];
+            if($parent_extra['moodle']['folders']['webroot']['name']) 
+                $webroot_folder_name = $parent_extra['moodle']['folders']['webroot']['name'];
+            else
             $webroot_folder_name = 'moodle';
         } else {
             $webroot_folder_name = '.';
