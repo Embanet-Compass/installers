@@ -50,6 +50,7 @@ class MoodleInstaller extends BaseInstaller
         'scormreport'        => 'mod/scorm/report/{$name}/',
         'theme'              => 'theme/{$name}/',
         'tinymce'            => 'lib/editor/tinymce/plugins/{$name}/',
+        'vendor'             => 'vendor/{$name}/',
         'profilefield'       => 'user/profile/field/{$name}/',
         'webservice'         => 'webservice/{$name}/',
         'workshopallocation' => 'mod/workshop/allocation/{$name}/',
