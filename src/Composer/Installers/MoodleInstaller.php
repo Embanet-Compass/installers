@@ -27,6 +27,7 @@ class MoodleInstaller extends BaseInstaller
         'datapreset'         => 'mod/data/preset/{$name}/',
         'editor'             => 'lib/editor/{$name}/',
         'enrol'              => 'enrol/{$name}/',
+        'fileconverter'      => 'files/converter/{$name}/',
         'filter'             => 'filter/{$name}/',
         'gradeexport'        => 'grade/export/{$name}/',
         'gradeimport'        => 'grade/import/{$name}/',
